@@ -1,0 +1,72 @@
+---
+title: "Timeline"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+
+```{r}
+# load the package
+library(timevis)
+# define the data to be displayed
+timeline <- data.frame(
+  id      = 1:34,
+  content = c("Body Image Disturbance: Assessment and Treatment - Thompson et al., 1990",
+               "Body Images: Development, Deviance, and Change - Cash & Pruzinsky, 1990",
+              "Physical Appearance and Gender: Sociobiological and Sociocultural Perspectives - Jackson, 1992",
+               "What Do You See When You Look in the Mirror? Helping Yourself to a Positive Body Image - Cash, 1995",
+              "Body Image, Eating Disorders, and Obesity: An Integrative Guide - Thompson et al., 1996",
+               "The Broken Mirror: Understanding and Treating Body Dysmorphic Disorder - Phillips, 1996",
+              "The Body Image Workbook: An 8-Step Program for Learning to Like Your Looks - Cash, 1997",
+               "Body Image: Understanding Body Dissatisfaction in Men, Women, and Children - Grogan, 1999",
+              "Exacting Beauty: Theory, Assessment, and Treatment of Body Image Disturbance - Thompson et al., 1999",
+               "The Adonis Complex: The Secret Crisis of Male Body Obsession - Pope et al., 2000",
+              "Body Image, Eating Disorders, and Obesity in Youth: Assessment, Prevention, and Treatment - Thompson & Smolak, 2001",
+               "Eating disorders: Innovative directions in research and practice - Striegel-Mole & Smolak, 2001",
+              "Disorders of Body Image - Castle & Phillips, 2002",
+               "Handbook of Eating Disorders and Obesity - Thompson, 2004",
+              "Adolescence and Body Image: From Development to Preventing Dissatisfaction - Ricciardelli & Yager, 2005",
+              "The Media and Body Image: If Looks Could Kill - Wykes & Gunter, 2005",
+              "The Psychology of Appearance - Rumsey & Harcourt, 2005",
+               "Psychological Aspects of Reconstructive and Cosmetic Plastic Surgery - Sarwer, 2006",
+              "The Muscular Ideal - Thompson & Cafri, 2007",
+               "The Body Image Workbook: An Eight-step Program for Learning to Like Your Looks - Cash, 2008",
+              "Body Image: A Handbook of Science, Practice, and Prevention - Cash & Smolak, 2012",
+               "Encyclopedia of Body Image and Human Appearance - Cash, 2012",
+              "Overcoming Body Image Problems including Body Dysmorphic Disorder - Clark et al., 2012",
+               "Chemically modified bodies: The use of diverse substances for appearance enhancement - Hall et al., 2016",
+              "The Body and Shame: Phenomenology, Feminism, and the Socially Shaped Body - Dolezal, 2016",
+               "Body Image Care for Cancer Patients Principles and Practice - Fingeret & Teo, 2018",
+              "Body Positive: Understanding and Improving Body Image in Science and Practice - Daniels et al., 2018",
+               "Handbook of Positive Body Image and Embodiment: Constructs, Protective Factors, and Interventions - Piran & Tylka, 2019",
+              "Treating Black Women with Eating Disorders: A Clinician's Guide - Small & Fuller, 2020",
+              "Body Image in Eating Disorders: Clinical Diagnosis and Integrative Approach to Psychological Treatment - Izydorczyk, 2021",
+              "Body schema and body image: New directions - Ataria, et al., 2021",
+              "Eating Disorders in Boys and Men - Nagata et al. 2021",
+              "Positive Body Image Workbook: A Clinical and Self-Improvement Guide - Wood-Barcalow et al., 2021",
+              "The Routledge Handbook of Clinical Sport Psychology - Donald et al., 2021"),
+  start   = c("1990-01-01","1990-01-01","1992-01-01","1995-01-01",
+              "1996-01-01","1996-01-01","1997-01-01",
+              "1999-01-01","1999-01-01","2000-01-01",
+              "2001-01-01","2001-01-01","2002-01-01",
+              "2004-01-01","2005-01-01","2005-01-01",
+              "2005-01-01","2006-01-01","2007-01-01",
+              "2008-01-01","2012-01-01","2012-01-01",
+              "2012-01-01","2016-01-01","2016-01-01",
+              "2018-01-01","2018-01-01","2019-01-01",
+              "2020-01-01","2021-01-01","2021-01-01",
+              "2021-01-01","2021-01-01","2021-01-01"),
+  end     = c(NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,
+              NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA))
+# add configuration options allowing editing of content in timeline
+config <- list(
+  editable = TRUE,
+  multiselect = TRUE)
+timevis(timeline, width = 1000, height = 500, options = config)
+```
+
